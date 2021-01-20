@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC
+        "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="simple" targetRuntime="MyBatis3Simple">
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库连接-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://118.178.85.163:3306/online-dinnner"
+                        userId="root"
+                        password="123456"/>
+        <!--指定Entity生成的位置-->
+        <javaModelGenerator targetPackage="Entity" targetProject="src/main/java/com/dinner/Entity"/>
+
+        <!--指定mapper生成的位置-->
+        <sqlMapGenerator targetPackage="mappers" targetProject="src/main/resources"/>
+
+        <!--指定Dao接口生成的位置-->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="Dao" targetProject="src/main/java/com/dinner/DAO"/>
+
+        <!--指定每个表的生成策略-->
+        <table tableName="repo_user" domainObjectName="User"  />
+    </context>
+</generatorConfiguration>
